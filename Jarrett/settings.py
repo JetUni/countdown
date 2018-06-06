@@ -32,7 +32,14 @@ SECRET_KEY = 'yu#^k+&^egkwds574ogzjd65lt5=qr(htnucxed9&*jspnvsgo'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = local_settings.DEBUG
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = [
+    'localhost',
+    '127.0.0.1',
+    '192.168.1.2',
+    'localhost.localdomain',
+    'localhost.local',
+    'localhost.jarrett.tk',
+]
 
 
 # Application definition
