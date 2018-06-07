@@ -1,12 +1,19 @@
 from django.db import models
+from datetime import datetime
 
 
 class Category(models.Model):
     name = models.CharField(max_length=100)
 
+    def __str__(self):
+        return self.name
+
 
 class Semester(models.Model):
     name = models.CharField(max_length=100)
+
+    def __str__(self):
+        return self.name
 
 
 class Day(models.Model):
@@ -14,3 +21,9 @@ class Day(models.Model):
     semester = models.ForeignKey(Semester, on_delete=models.CASCADE, blank=True, null=True)
     year = models.IntegerField(blank=True, null=True)
     date = models.DateField()
+
+    def __str__(self):
+        if self.category.name == "School":
+            return "{} {} - {}".format(self.semester, self.year, self.date.strftime("%Y-%m-%d"))
+        else:
+            return self.date.strftime("%Y-%m-%d")
