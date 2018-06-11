@@ -1,0 +1,157 @@
+/* Reset */
+
+body,div,dl,dt,dd,ul,ol,li,pre,code,form,fieldset,legend,input,textarea,p,blockquote,th,td {
+  margin:0;
+  padding:0;
+}
+
+table {
+  border-collapse:collapse;
+  border-spacing:0;
+}
+
+fieldset,img {
+  border:0;
+}
+
+address,caption,dfn,th,var {
+  font-style:normal;
+  font-weight:normal;
+}
+
+li {
+  list-style:none;
+}
+
+caption,th {
+  text-align:left;
+}
+
+h1,h2,h3,h4,h5,h6 {
+  font-size:100%;
+  font-weight:normal;
+  margin:0;
+  padding:0;
+}
+
+body {
+  font-family: Helvetica Neue, Helvetica, Arial;
+  margin:0;
+  padding:0;
+}
+
+.container {
+margin: 0 auto;
+width: 636px;
+}
+
+.header {
+  float: left;
+  padding-top: 20px;
+  width:636px;
+}
+
+a.logo {
+  color: #fff;
+  display: block;
+  filter: dropshadow(color=#3e3935, offx=1, offy=1);
+  font-size: 100px;
+  margin: 0 auto 30px auto;
+  text-align: center;
+  text-shadow: 1px 1px 7px #3e3935;
+  width: 300px;
+}
+
+a.logo span {
+  display: block;
+  font-size: 11px;
+  letter-spacing: 4px;
+  text-align: center;
+  text-transform: uppercase;
+}
+
+.clear {
+  clear: both;
+}
+
+ul.social {
+  height: 24px;
+  margin: 0 auto;
+  width: 109px;
+}
+
+ul.social li {
+  float: left;
+  height: 24px;
+  position: relative;
+}
+
+
+ul.social li.fb {
+  background-position: -31px 0;
+  height: 24px;
+  margin-right: 20px;
+  width: 21px;
+}
+
+ul.social li.fb:hover {
+  background-position: -31px -24px;
+}
+
+ul.social li.fb a {
+  display: block;
+  height: 24px;
+  width: 21px;
+}
+
+
+ul.social li.tw {
+  background-position: 0 0;
+  height: 24px;
+  margin-right: 20px;
+  width: 21px;
+}
+
+ul.social li.tw:hover {
+  background-position: 0 -24px;
+}
+
+ul.social li.tw a {
+  display: block;
+  height: 24px;
+  width: 21px;
+}
+
+ul.social li.yt {
+  background-position: -67px 0;
+  height: 24px;
+  width: 24px;
+}
+
+ul.social li.yt:hover {
+  background-position: -67px -24px;
+}
+
+ul.social li.yt a {
+  display: block;
+  height: 24px;
+  width: 24px;
+}
+
+.video {
+  height: 278px;
+  margin: -20px 0;
+  padding: 68px;
+  width: 500px;
+}
+
+.coming_soon {
+float: left;
+width: 636px;
+}
+
+p {
+  color: #fff;
+  font-size: 16px;
+  text-align: center;
+}

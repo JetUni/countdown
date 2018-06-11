@@ -1,0 +1,48 @@
+{% extends 'base.html' %}
+{% block morehead %}
+  <title>Jarrett Sorensen</title>
+  <link href="{% static 'css/style.css' %}" rel="stylesheet" type="text/css" />
+  <style>
+    body {
+        background: #000 url("{% static 'images/bg.jpg' %}") top center no-repeat;
+    }
+    ul.social li {
+        background: url("{% static 'images/social.png' %}") left top no-repeat;
+    }
+    .video {
+        background: url("{% static 'images/video.png' %}") left top no-repeat;
+    }
+  </style>
+{% endblock %}
+{% block morejs %}
+  <script type="text/javascript" src="{% static 'js/jquery.min.js' %}"></script>
+  <script type="text/javascript" src="{% static 'js/cufon-yui.js' %}"></script>
+  <script type="text/javascript" src="{% static 'js/CaramelNuggets_400.font.js' %}"></script>
+  <script type="text/javascript" src="{% static 'js/Gotham_Book_400.font.js' %}"></script>
+  <script type="text/javascript">
+    Cufon.replace('a.logo', {fontFamily: 'CaramelNuggets'});
+    Cufon.replace('a.logo span', {fontFamily: 'Gotham Book'});
+  </script>
+{% endblock %}
+{% block body %}
+  <div class="container">
+    <div class="header">
+      <a class="logo" href="#">Jarrett<span>having fun with tech</span></a>
+      <ul class="social">
+        <li class="fb"><a href="https://www.facebook.com/jet.uni"></a></li>
+        <li class="tw"><a href="https://twitter.com/JetUni"></a></li>
+        <li class="yt"><a href="https://www.youtube.com/channel/UCf1pJJLVcNWwfOHkXFSlTNw"></a></li>
+      </ul>
+    </div>
+
+    <div class="clear"></div>
+
+    <div class="video">
+      <iframe width="500" height="278" src="https://www.youtube.com/embed/fiore9Z5iUg" frameborder="0" allowfullscreen></iframe>
+    </div>
+
+    <div class="coming_soon">
+      <p>New Site Coming Soon.</p>
+    </div>
+  </div>
+{% endblock %}
