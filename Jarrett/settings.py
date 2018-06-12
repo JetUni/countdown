@@ -39,6 +39,7 @@ ALLOWED_HOSTS = [
     'localhost.localdomain',
     'localhost.local',
     'localhost.jarrett.tk',
+    'jarrett.tk'
 ]
 
 
