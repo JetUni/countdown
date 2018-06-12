@@ -1,5 +1,5 @@
 from django.db import models
-from datetime import datetime
+from datetime import datetime, timedelta
 
 
 class Category(models.Model):
@@ -14,6 +14,8 @@ class Category(models.Model):
 
 class Semester(models.Model):
     name = models.CharField(max_length=100)
+    start = models.DateField(default=datetime.today()-timedelta(weeks=100))
+    end = models.DateField(default=datetime.today()-timedelta(weeks=100))
 
     def __str__(self):
         return self.name
