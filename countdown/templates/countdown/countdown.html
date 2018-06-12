@@ -11,6 +11,14 @@
     div.progress-bar {
       width: 0%;
     }
+    {% if category.name == "Baby" %}
+      body {
+        background-color: #FFEDEF !important;
+      }
+      div.progress-bar {
+        background-color: #FF8696;
+      }
+    {% endif %}
   </style>
 {% endblock %}
 {% block morejs %}
@@ -49,7 +57,7 @@
   <div class="container">
     <div class="row">
       <div class="col align-self-center">
-        <h1 class="text-center">Spring 2018</h1>
+        <h1 class="text-center">{{ title }}</h1>
       </div>
     </div>
   </div>
