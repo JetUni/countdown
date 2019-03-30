@@ -38,8 +38,8 @@ ALLOWED_HOSTS = [
     '192.168.1.2',
     'localhost.localdomain',
     'localhost.local',
-    'localhost.jarrett.tk',
-    'jarrett.tk'
+    'localhost.jarretts.tk',
+    'jarretts.tk'
 ]
 
 
