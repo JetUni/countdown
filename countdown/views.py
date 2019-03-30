@@ -13,12 +13,22 @@ def index(request, category_id=1):
         for s in Semester.objects.all():
             if s.start <= today and s.end >= today:
                 semester = s
-        total_days = Day.objects.filter(category_id=category_id, semester=semester, year=datetime.now().year).count()
-        days_left = Day.objects.filter(category_id=category_id, semester=semester, year=datetime.now().year, date__gt=datetime.now()).count()
+        total_days = Day.objects.filter(
+            category_id=category_id,
+            semester=semester,
+            year=datetime.now().year
+        ).count()
+        days_left = Day.objects.filter(
+            category_id=category_id,
+            semester=semester,
+            year=datetime.now().year,
+            date__gt=datetime.now()
+        ).count()
         context['title'] = "{} {}".format(semester, datetime.now().year)
     else:
         total_days = Day.objects.filter(category_id=category_id).count()
-        days_left = Day.objects.filter(category_id=category_id, date__gt=datetime.now()).count()
+        days_left = Day.objects.filter(
+            category_id=category_id, date__gt=datetime.now()).count()
         context['title'] = category.name
 
     context['category'] = category
