@@ -9,6 +9,7 @@ def index(request, category_id=1):
     context = {}
     category = get_object_or_404(Category, pk=category_id)
     today = datetime.now().date()
+    semester = Semester.objects.last()
     if category.name == "School":
         for s in Semester.objects.all():
             if s.start <= today and s.end >= today:
