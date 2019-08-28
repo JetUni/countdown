@@ -1,2 +1,6 @@
 env/
 Jarrett/local_settings.py
+sitestatic/
+
+**/__pycache__
+
