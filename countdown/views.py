@@ -12,6 +12,10 @@ def index(request, category_id=1):
     semester = Semester.objects.last()
     if category.name == "School":
         for s in Semester.objects.all():
+            if s.start.year is not today.year:
+                s.start.replace(year=today.year)
+            if s.end.year < today.year:
+                s.end.replace(year=today.year)
             if s.start <= today and s.end >= today:
                 semester = s
         total_days = Day.objects.filter(
