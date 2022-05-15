@@ -1,48 +1,54 @@
 {% extends 'base.html' %}
+
 {% block morehead %}
-  <title>Jarrett Sorensen</title>
+  <title>Financial Coaching</title>
+  <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}">
   <link href="{% static 'css/style.css' %}" rel="stylesheet" type="text/css" />
-  <style>
-    body {
-        background: #000 url("{% static 'images/bg.jpg' %}") top center no-repeat;
-    }
-    ul.social li {
-        background: url("{% static 'images/social.png' %}") left top no-repeat;
-    }
-    .video {
-        background: url("{% static 'images/video.png' %}") left top no-repeat;
-    }
-  </style>
 {% endblock %}
+
 {% block morejs %}
   <script type="text/javascript" src="{% static 'js/jquery.min.js' %}"></script>
-  <script type="text/javascript" src="{% static 'js/cufon-yui.js' %}"></script>
-  <script type="text/javascript" src="{% static 'js/CaramelNuggets_400.font.js' %}"></script>
-  <script type="text/javascript" src="{% static 'js/Gotham_Book_400.font.js' %}"></script>
-  <script type="text/javascript">
-    Cufon.replace('a.logo', {fontFamily: 'CaramelNuggets'});
-    Cufon.replace('a.logo span', {fontFamily: 'Gotham Book'});
-  </script>
+  <script src="{% static 'js/bootstrap.min.js' %}"></script>
 {% endblock %}
+
 {% block body %}
-  <div class="container">
-    <div class="header">
-      <a class="logo" href="#">Jarrett<span>having fun with tech</span></a>
-      <ul class="social">
-        <li class="fb"><a href="https://www.facebook.com/jet.uni"></a></li>
-        <li class="tw"><a href="https://twitter.com/JetUni"></a></li>
-        <li class="yt"><a href="https://www.youtube.com/channel/UCf1pJJLVcNWwfOHkXFSlTNw"></a></li>
-      </ul>
+  <nav class="navbar navbar-expand-md navbar-light bg-light">
+    <a class="navbar-brand" href="#">
+      Financial Coaching
+    </a>
+    <button class="btn btn-outline-success ml-auto" type="button">Schedule Now</button>
+  </nav>
+  {% comment %} <div class="container-fluid">
+    <img src="{% static 'images/bookkeeping-1920.jpg' %}" />
+  </div> {% endcomment %}
+  <!-- First Parallax Section -->
+  <div class="jumbotron parallax parallax-section-1">
+    <div class="row justify-content-center">
+      <div class="col">
+        <h1 class="display-3">Here is a heading 1</h1>
+        <p class="lead">Here is a short description 1</p>
+        <div class="row justify-content-center">
+          <a class="btn btn-info btn-lg btn-md" href="#" role="button">Here is a button 1</a>
+        </div>
+      </div>
     </div>
+  </div>
 
-    <div class="clear"></div>
-
-    <div class="video">
-      <iframe width="500" height="278" src="https://www.youtube.com/embed/fiore9Z5iUg" frameborder="0" allowfullscreen></iframe>
+  <!-- Second Parallax Section -->
+  <div class="jumbotron parallax parallax-section-2">
+    <h1 class="display-3">Here is a heading 2</h1>
+    <p class="lead">Here is a short description 2</p>
+    <div class="row justify-content-center">
+      <a class="btn btn-warning btn-lg btn-md" href="widgets.html" role="button">Here is a button 2</a>
     </div>
+  </div>
 
-    <div class="coming_soon">
-      <p>New Site Coming Soon.</p>
+  <!-- Third Parallax Section -->
+  <div class="jumbotron parallax parallax-section-3">
+    <h1 class="display-3">Here is a heading 3</h1>
+    <p class="lead">Here is a short description 2</p>
+    <div class="row justify-content-center">
+      <a class="btn btn-primary btn-lg btn-md" href="themes.html" role="button">Here is a button 3</a>
     </div>
   </div>
 {% endblock %}
