@@ -2,7 +2,7 @@
 {% block morehead %}
   <title>Jarrett Sorensen</title>
   <link href="{% static 'css/style.css' %}" rel="stylesheet" type="text/css" />
-  <style>
+  <style nonce="{{ nonce }}">
     body {
         background: #000 url("{% static 'images/bg.jpg' %}") top center no-repeat;
     }
@@ -19,7 +19,7 @@
   <script type="text/javascript" src="{% static 'js/cufon-yui.js' %}"></script>
   <script type="text/javascript" src="{% static 'js/CaramelNuggets_400.font.js' %}"></script>
   <script type="text/javascript" src="{% static 'js/Gotham_Book_400.font.js' %}"></script>
-  <script type="text/javascript">
+  <script type="text/javascript" nonce="{{ nonce }}">
     Cufon.replace('a.logo', {fontFamily: 'CaramelNuggets'});
     Cufon.replace('a.logo span', {fontFamily: 'Gotham Book'});
   </script>

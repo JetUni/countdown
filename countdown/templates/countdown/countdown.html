@@ -1,7 +1,7 @@
 {% extends 'base.html' %}
 {% block morehead %}
   <title>Countdown</title>
-  <style>
+  <style nonce="{{ nonce }}">
     h1.text-center {
       font-size: 5rem;
     }
@@ -25,7 +25,7 @@
   <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}">
   <script src="{% static 'js/bootstrap.min.js' %}"></script>
   <script src="{% static 'js/jquery-3.3.1.slim.min.js' %}"></script>
-  <script>
+  <script nonce="{{ nonce }}">
     // Function to update countdown
     function updateTime() {
 
