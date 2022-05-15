@@ -7,9 +7,94 @@
   <link rel="stylesheet" href="{% static 'css/flatpickr.min.css' %}">
   <script src="{% static 'js/bootstrap.min.js' %}"></script>
   <script src="{% static 'js/flatpickr.min.js' %}"></script>
+  <script src="{% static 'js/jquery-3.3.1.min.js' %}"></script>
   <script>
     flatpickr("#id_start_date");
     flatpickr("#id_end_date");
+  </script>
+  <script nonce="{{ nonce }}">
+    // init django csrf
+    // using jQuery
+    function getCookie(name) {
+        var cookieValue = null;
+        if (document.cookie && document.cookie !== '') {
+            var cookies = document.cookie.split(';');
+            for (var i = 0; i < cookies.length; i++) {
+                var cookie = jQuery.trim(cookies[i]);
+                // Does this cookie string begin with the name we want?
+                if (cookie.substring(0, name.length + 1) == (name + '=')) {
+                    cookieValue = decodeURIComponent(cookie.substring(name.length + 1));
+                    break;
+                }
+            }
+        }
+        return cookieValue;
+    }
+
+    function csrfSafeMethod(method) {
+        // these HTTP methods do not require CSRF protection
+        return (/^(GET|HEAD|OPTIONS|TRACE)$/.test(method));
+    }
+
+    var csrftoken = getCookie('csrftoken');
+
+    $.ajaxSetup({
+        beforeSend: function(xhr, settings) {
+            if (!csrfSafeMethod(settings.type) && !this.crossDomain) {
+                xhr.setRequestHeader("X-CSRFToken", csrftoken);
+            }
+        }
+    });
+
+    // http://stackoverflow.com/a/4673436/209050
+    function Sformat(format) {
+        var args = Array.prototype.slice.call(arguments, 1);
+        return format.replace(/{(\d+)}/g, function(match, number) {
+            return typeof args[number] != 'undefined' ? args[number] : match;
+        });
+    }
+
+    function parseResult(result) {
+        var resultArray = [];
+        result.split("\n").forEach(function(row) {
+            var rowArray = [];
+            row.split(",").forEach(function(cell) {
+                rowArray.push(cell);
+            });
+            resultArray.push(rowArray);
+        });
+        return resultArray;
+    }
+
+    var fileInput = document.getElementById("csv-to-process");
+
+    readFile = function() {
+        var reader = new FileReader();
+        reader.onload = function () {
+            var csvArr = parseResult(reader.result);
+            out = document.getElementById('out');
+            out.innerHTML = "";
+            csvArr.forEach(function(item, index) {
+                out.innerHTML += "index[" + index + "]: " + item + "<br>";
+            });
+        };
+        // start reading the file. When it is done, calls the onload event defined above.
+        reader.readAsText(fileInput.files[0]);
+    };
+
+    $('#csv-to-process').on('change', function() {
+        readFile();
+        // $.ajax({
+        //     url: '{% url "add_dates" %}',
+        //     type: 'POST',
+        //     data: {},
+        //     dataType: 'json',
+        //     success: function(data) {
+        //         window.console.log("Success in the ajax function");
+        //         window.console.log(data);
+        //     },
+        // });
+    });
   </script>
 {% endblock %}
 {% block body %}

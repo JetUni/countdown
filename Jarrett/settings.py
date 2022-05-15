@@ -154,3 +154,18 @@ STATICFILES_DIRS = (
     # Don't forget to use absolute paths, not relative paths.
     os.path.join(BASE_DIR, 'static'),
 )
+
+# http://andrearobertson.com/blog/2018/05/19/django-example-setting-up-http-security/
+CSP_BASE_URI = ("'none'", )
+CSP_CHILD_SRC = ("'self'", "https://www.youtube.com", )
+CSP_DEFAULT_SRC = ("'none'", )
+CSP_FONT_SRC = ("'self'", )
+CSP_FORM_ACTION = ("'self'", )
+CSP_FRAME_ANCESTORS = ("iframe", )
+# CSP_INCLUDE_NONCE_IN = ('script-src',)
+CSP_IMG_SRC = ("'self'", )
+CSP_SCRIPT_SRC = ("'self'", "'unsafe-inline'", )
+CSP_STYLE_SRC = ("'self'", "'unsafe-inline'", )
+
+SECURE_BROWSER_XSS_FILTER = True
+SECURE_CONTENT_TYPE_NOSNIFF = True
