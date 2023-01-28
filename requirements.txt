@@ -1,7 +1,7 @@
 asgiref==3.6.0
 backcall==0.1.0
 decorator==4.3.0
-Django==3.0.14
+Django==3.1.14
 django-extensions==2.0.7
 ipdb==0.11
 ipython==6.4.0
